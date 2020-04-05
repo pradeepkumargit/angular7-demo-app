@@ -37,7 +37,7 @@ export class AsyncAwaitService {
     // console.log('course data',JSON.stringify(data[0].name));
   }
 
-  getAsyncData() {
+  getEmployeeData() {
     return this.httpClient.get<Employee>(this.url);
   }
 }

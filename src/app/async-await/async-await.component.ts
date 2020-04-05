@@ -81,7 +81,7 @@ export class AsyncAwaitComponent implements OnInit {
   }
   //Get HttpClient result using Observable:
   getDataUsingSubscribe() {
-    this.httpClient.get<Employee>(this.url).subscribe(data =>{
+    this.asyncAwaitService.getEmployeeData().subscribe(data =>{
       this.subscribeResult = data;
       console.log('Subscibe Executed.')
       console.log('Subscibe Executed data',this.subscribeResult);
@@ -91,7 +91,7 @@ export class AsyncAwaitComponent implements OnInit {
 
   //Get HttpClient result using toPromise:
   getDataUsingPromise() {
-    this.httpClient.get<Employee>(this.url).toPromise().then( data => {
+    this.asyncAwaitService.getEmployeeData().toPromise().then( data => {
       this.promiseResult = data;
       console.log('Promise Executed');
       console.log('Promise Executed Data',data);
@@ -101,7 +101,7 @@ export class AsyncAwaitComponent implements OnInit {
   //Get HttpClient result using async-await:
 
   async getAsyncData() {
-    this.asyncResult = await this.asyncAwaitService.getAsyncData().toPromise();
+    this.asyncResult = await this.asyncAwaitService.getEmployeeData().toPromise();
     console.log('No issues, I will wait until promise is resolved..');
     console.log('Async Data',this.asyncResult);
   }
