@@ -1,0 +1,5 @@
+<div class="app-parent"> This is Prarent Component
+  <app-child (attributesUpdated)="getAttributesUpdatedFlag($event)"></app-child>
+  <div *ngIf="attributesDone">Show when update attibutes done</div>
+</div>
+

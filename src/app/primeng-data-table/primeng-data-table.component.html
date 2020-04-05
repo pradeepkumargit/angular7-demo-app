@@ -1,0 +1,97 @@
+<!-- <p-dataTable [value]="resultsArr" scrollable="true" 
+  scrollHeight="200px" [rows]="8" virtualScroll="virtualScroll" 
+  [style]="{'margin-top':'30px'}" [lazy]="true" [totalRecords]="results.length" 
+  (onLazyLoad)="lazyLoad($event)" [loading]="loading" [(selection)]="selectedResult">
+  <p-column  selectionMode="multiple" [style]="{'width':'5%'}"></p-column>
+  <p-column header="Id">
+  <ng-template pTemplate="body" let-index="rowIndex">
+      {{index}}
+  </ng-template>
+  </p-column>
+  <p-column field="name" header="Name" ></p-column>
+  <p-column field="age" header="Age"></p-column>
+  <p-column field="company" header="Company"></p-column>
+</p-dataTable>
+<ul>
+    <li *ngFor="let item of selectedResult" style="text-align: left">
+      {{item.id + ' - ' + item.name + ' - ' + item.age + ' - ' + item.company}}
+    </li>
+</ul> -->
+
+<!-- <p-dataTable [value]="carsLarge" scrollable="true" scrollHeight="300px" 
+  [rows]="10" virtualScroll="true" [style]="{'margin-top':'30px'}" 
+    [lazy]="true" [totalRecords]="carsLarge.length" (onLazyLoad)="loadCarsLazy($event)" 
+    [loading]="loading" [(selection)]="selectedCars">
+    <p-column  selectionMode="multiple" [style]="{'width':'5%'}"></p-column>
+    <p-column field="vin" header="Vin"></p-column>
+    <p-column field="year" header="Year"></p-column>
+    <p-column field="brand" header="Brand"></p-column>
+    <p-column field="color" header="Color"></p-column>
+</p-dataTable>
+<ul>
+    <li *ngFor="let car of selectedCars" style="text-align: left">
+      {{car.vin + ' - ' + car.brand + ' - ' + car.year + ' - ' + car.color}}
+    </li>
+</ul> -->
+<!-- <p-dataTable [value]="carsLarge" scrollable="true" scrollHeight="200px" [rows]="10" 
+  virtualScroll="virtualScroll" [style]="{'margin-top':'30px'}" [lazy]="true" 
+  [totalRecords]="totalRecords" (onLazyLoad)="loadCarsLazy($event)" [(selection)]="selectedCars">
+    <p-header>Virtual Scrolling - 500000 Rows</p-header>
+    <p-column  selectionMode="multiple" [style]="{'width':'5%'}"></p-column>
+    <p-column field="brand" header="Brand"></p-column>
+    <p-column field="year" header="Year"></p-column>
+    <p-column field="color" header="Color"></p-column>
+    <p-column field="vin" header="Vin"></p-column>
+</p-dataTable>
+<ul>
+    <li *ngFor="let car of selectedCars" style="text-align: left">
+      {{car.brand + ' - ' + car.year + ' - ' + car.color + ' - ' + car.vin}}
+    </li>
+</ul> -->
+
+<!-- <p-dataTable [value]="photoDetails"
+             scrollable="true" scrollHeight="400px" [rows]=rows virtualScroll="virtualScroll"
+             [style]="{'margin-top':'30px'}"
+             [(selection)]="selectedPhotos"
+             [lazy]="true" [totalRecords]=totalRecords (onLazyLoad)="lazyLoadDetails($event)">
+ 
+    <p-column selectionMode="multiple" [style]="{'width':'5%'}"></p-column>
+    <p-column field="albumId" header="Albummb Id"></p-column>
+    <p-column field="id" header="ID"></p-column>
+    <p-column field="title" header="Title"></p-column>
+    <p-column field="url" header="URL"></p-column>
+</p-dataTable>
+<ul>
+    <li *ngFor="let photo of selectedPhotos" style="text-align: left">
+      {{photo.albumId + ' - ' + photo.id + ' - ' + photo.title + ' - ' + photo.url}}
+    </li>
+</ul> -->
+<p-checkbox name="group1" value="SMP" label="SMP" (onChange)="showSMPDetailsColumn()"></p-checkbox>
+<p-dataTable [value]="sales">
+  <p-headerColumnGroup>
+      <p-row>
+          <p-column header="Brand" rowspan="2"></p-column>
+          <p-column header="Sale Rate" [style]="{'border':'1px solid red','background':'#052A86'}" 
+            colspan="4"></p-column>
+          <p-column *ngIf="showSMPDetails" header="SMP Details" 
+            [style]="{'border':'1px solid red','background':'#5584F7'}" 
+            [headerStyleClass]="red" colspan="2"></p-column>
+      </p-row>
+      <p-row>
+          <p-column header="Last Year"></p-column>
+          <p-column header="This Year"></p-column>
+          <p-column header="Last Year"></p-column>
+          <p-column header="This Year"></p-column>
+          <p-column *ngIf="showSMPDetails" header="SMP Name"></p-column>
+          <p-column *ngIf="showSMPDetails" header="SMP Id"></p-column>
+      </p-row>
+  </p-headerColumnGroup>
+  
+  <p-column field="brand"></p-column>
+  <p-column field="lastYearSale"></p-column>
+  <p-column field="thisYearSale"></p-column>
+  <p-column field="lastYearProfit"></p-column>
+  <p-column field="thisYearProfit"></p-column>
+  <p-column *ngIf="showSMPDetails" field="smpName"></p-column>
+  <p-column *ngIf="showSMPDetails" field="smpId"></p-column>
+</p-dataTable>

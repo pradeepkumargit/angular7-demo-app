@@ -1,0 +1,10 @@
+<!-- <span>'1 BTC = {{ price | currency:'USD':'symbol' }}'</span> -->
+
+<div *ngIf="courses">
+  <ul>
+      <li *ngFor="let course of courses">
+        <span>{{ course.name }}</span><br/>
+        <span>{{ course.description }}</span>
+      </li>
+    </ul>
+</div>
