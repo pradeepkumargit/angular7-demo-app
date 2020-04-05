@@ -8,7 +8,12 @@ import { Employee } from '../model/employee.model';
   providedIn: 'root'
 })
 export class AsyncAwaitService {
+  
   //https://www.techiediaries.com/amp/javascript-async-await-tutorial
+
+  //http://dummy.restapiexample.com/
+
+  //https://medium.com/@balramchavan/using-async-await-feature-in-angular-587dd56fdc77
 
   bitcoinRateUrl = 'http://api.coindesk.com/v1/bpi/currentprice.json';
   apiUrl = 'https://www.techiediaries.com/api/data.json';
@@ -27,7 +32,7 @@ export class AsyncAwaitService {
     // console.log('What is the Data:' + JSON.stringify(data));
     // console.log('course data',JSON.stringify(data[0].name));
   }
-  
+
   getAsyncData() {
     return this.httpClient.get<Employee>(this.url);
   }
