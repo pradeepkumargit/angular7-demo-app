@@ -15,6 +15,10 @@ export class AsyncAwaitService {
 
   //https://medium.com/@balramchavan/using-async-await-feature-in-angular-587dd56fdc77
 
+  //https://stackblitz.com/edit/angular-async-await
+
+  //https://hackernoon.com/should-i-use-promises-or-async-await-126ab5c98789
+
   bitcoinRateUrl = 'http://api.coindesk.com/v1/bpi/currentprice.json';
   apiUrl = 'https://www.techiediaries.com/api/data.json';
   url = 'http://dummy.restapiexample.com/api/v1/employees';
